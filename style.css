@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Ubuntu:400,500,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+    color: #333;
+    background: #eee;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+h1 {
+    font-size: 2em;
+    color: #f0932b;
+}
+h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #30336b;
+}
+h4 {
+    color: #f0932b;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: #30336b;
+}
+.article {
+    max-width: 800px;
+    padding: 20px 10px;
+    margin: auto;
+}
+.article a{
+    color: #eb4d4b;
+    font-weight: 700;
+    font-style: italic;
+}
+.article table {
+    width: 10px;
+    max-width: 50px !important;
+    background: red;
+    overflow: hidden;
+}
+.text-left {
+    text-align: left;
+}
+.m-0 {
+    margin: 0;
+}

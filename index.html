@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DICOM Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="article">
+        <br>
+        <img src="https://summerofcode.withgoogle.com/static/img/summer-of-code-logo.svg" alt="GSoC logo">
+        <h1>DICOM Support in FFmpeg</h1>
+        <hr>
+        <br>
+        <h3 class="text-left">To add support for DICOM (Digital Imaging and Communications in Medicine) image files
+            in FFmpeg.</h3>
+        <p class="text-left m-0">
+            DICOM is the standard for the communication and management of medical imaging information and related
+            data. DICOM is most commonly used for storing and transmitting medical images enabling the integration of
+            medical imaging devices such as scanners, servers, workstations, printers, network hardware, and picture
+            archiving and communication systems (PACS) from multiple manufacturers
+            <br>
+            <br>
+            The aim of this project is to program a demuxer in the libavformat and decoder in the libavcodec library. As
+            DICOM files
+            contain lots of metadata about the medical procedure done, the demuxer should be able to correctly identify
+            and separate the data in the required number of streams. The demuxer should also handle the multiframe
+            images correctly. The DICOM decoder should decode the compressed
+            pixel data coming from the demuxer.
+        </p>
+        <br>
+        <h3 class="text-left">Project details</h3>
+        <div class="text-left">
+            <p>
+                <b>Project work repo:</b>
+                <a href="https://github.com/shivamgoyal15/FFmpeg">https://github.com/shivamgoyal15/FFmpeg</a>
+            </p>
+            <p>
+                <b>GSoC project details:</b>
+                <a
+                    href="https://summerofcode.withgoogle.com/projects/#6700151224139776">https://summerofcode.withgoogle.com/projects/#6700151224139776</a>
+            </p>
+        </div>
+        <br>
+        <h3 class="text-left">This is what was done during the project work period</h3>
+        <div class="text-left">
+            <h4>Sprint 1</h4>
+            <ul>
+                <li>Bonding with the community</li>
+                <li>Learn how image/video files work</li>
+                <li>Learn how FFmpeg is structured to handle a wide diversity of formats</li>
+            </ul>
+            <h4>Sprint 2</h4>
+            <ul>
+                <li>Learn the structure of DICOM files and read the DICOM standard</li>
+                <li>Programmed the DICOM demuxer
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/a314e14b9dd9cbe3cf5716e3202529889c1e7b3d">Commit</a>
+                </li>
+            </ul>
+            <h4>Sprint 3</h4>
+            <ul>
+                <li>More work on the DICOM demuxer and made a trivial DICOM decoder
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/a314e14b9dd9cbe3cf5716e3202529889c1e7b3d">Commit</a>
+                </li>
+                <li>Discussed with the community on how to handle the metadata (info about the patient or Medical
+                    Procedure) present in DICOM files, As this was something different and specific to DICOM images
+                    only.
+                </li>
+            </ul>
+
+            <h4>Sprint 4</h4>
+            <ul>
+                <li>
+                    Added Image group data in the DICOM dicionary, necessory for Implicit DICOM files
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/fbec2409d7e87b437f1efd919423c91ea6e0555d">Commit</a>
+                </li>
+                <li>Changed the metadata system as suggested by the Core developers
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/fc1ab9dca6e0effa41827136debb02165ce81c13">Commit</a>
+                </li>
+            </ul>
+
+            <h4>Sprint 5</h4>
+            <ul>
+                <li>Extended the DICOM decoder
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/f69c92c4c0cdbeaef2de71aab6d2a8e079038b53">Commit</a>
+                </li>
+                <li>
+                    Improved the metadata system, while reading header of the image files
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/e1c7347afc55624c6ad3831fbeeaae601d698e8e">Commit</a>
+                </li>
+            </ul>
+
+            <h4>Sprint 6</h4>
+            <ul>
+                <li>Tested the demuxer, Fixed memory leaks and improved the dictionary
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/148d06e82cde59af6e878c3da06eeafe11b2a725">Commit</a>
+                </li>
+            </ul>
+
+            <h4>Sprint 7</h4>
+            <ul>
+                <li>Created patch to submit to the FFmpeg mailing list. Recieved comments and suggestions to improve the
+                    code</li>
+                <li>Worked on the code as suggested.
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/ba57190e73f57d36872d0e9aee321be89a0a63b2">Commit</a>
+                    +
+                    <a
+                        href="https://github.com/shivamgoyal15/FFmpeg/commit/bf0a55e6996c90d044dfd66cb4fd75700ae2d3ab">Commit</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <br>
+        <h3>Final thoughts and future aspacts</h3>
+        <div class="text-left">
+            At present the support for uncompressed DICOM image files is added. Supporting both Explicit and Implicit
+            value representation. also, supporting both multiframe and singleframe files. The decoder also supports both
+            MONOCHROME1 and MONOCHROME2 type of photometric interpretations.
+            <br>
+            The support for compressed DICOM image files is not yet added. As uncompressed DICOM files are more widely
+            used than the compressed DICOM files. So, the support for uncompressed files was the prefrence and which is
+            almost done.
+            <br>
+            In future, i would like to add support for compressed DICOM files in FFmpeg too, and as DICOM jpeg and RLE
+            compression standards are used more than other compression standards. The support for these two should be
+            preferred.
+        </div>
+    </section>
+
+</body>
+
+</html>

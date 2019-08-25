@@ -1,2 +1,2 @@
-# dicom_gsoc
-DICOM Support in FFmpeg
+# DICOM Support in FFmpeg
+Google Summer of Code 2019 Project
