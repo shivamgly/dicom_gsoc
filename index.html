@@ -12,25 +12,27 @@
 <body>
     <section class="article">
         <br>
+        <img width="4%" src="./ffmpeg.png" alt="GSoC logo">
+        <br>
         <img width="40%" src="./gsoc_logo.png" alt="GSoC logo">
-        <h1>DICOM Support in FFmpeg</h1>
+        <h1 class="m-0">DICOM Support in FFmpeg</h1>
+        <br>
         <hr>
         <br>
         <h3 class="text-left">To add support for DICOM (Digital Imaging and Communications in Medicine) image files
             in FFmpeg.</h3>
-        <p class="text-left m-0">
+        <p class="text-left">
             DICOM is the standard for the communication and management of medical imaging information and related
             data. DICOM is most commonly used for storing and transmitting medical images enabling the integration of
             medical imaging devices such as scanners, servers, workstations, printers, network hardware, and picture
             archiving and communication systems (PACS) from multiple manufacturers
             <br>
             <br>
-            The aim of this project is to program a demuxer in the libavformat and decoder in the libavcodec library. As
-            DICOM files
-            contain lots of metadata about the medical procedure done, the demuxer should be able to correctly identify
-            and separate the data in the required number of streams. The demuxer should also handle the multiframe
-            images correctly. The DICOM decoder should decode the compressed
-            pixel data coming from the demuxer.
+            This project aims to program a demuxer in the libavformat and decoder in the libavcodec library. As DICOM
+            files contain lots of metadata about the medical procedure done, the demuxer should be able to correctly
+            identify and separate the data in the required number of streams. The demuxer should also handle the
+            multi-frame images correctly. The DICOM decoder should decode the compressed pixel data coming from the
+            demuxer.
         </p>
         <br>
         <h3 class="text-left">Project details</h3>
@@ -121,21 +123,26 @@
                 </li>
             </ul>
         </div>
+        <br>
+        <br>
         <hr>
         <br>
-        <h3>Final thoughts and future aspacts</h3>
+        <h3>Final thoughts and future aspects</h3>
+        <br>
         <div class="text-left">
-            At present the support for uncompressed DICOM image files is added. Supporting both Explicit and Implicit
-            value representation. also, supporting both multiframe and singleframe files. The decoder also supports both
-            MONOCHROME1 and MONOCHROME2 type of photometric interpretations.
+            At present, the support for uncompressed DICOM image files is added. Supporting both Explicit and Implicit
+            value representation. Also, supporting both multi-frame and single-frame data. The decoder also supports
+            both MONOCHROME1 and MONOCHROME2 type of photometric interpretations.
             <br>
-            The support for compressed DICOM image files is not yet added. As uncompressed DICOM files are more widely
-            used than the compressed DICOM files. So, the support for uncompressed files was the prefrence and which is
+            <br>
+            The support for compressed DICOM image files is not yet added as uncompressed DICOM files are more widely
+            used than the compressed DICOM files. So, the support for uncompressed files was the preference and which is
             almost done.
             <br>
-            In future, i would like to add support for compressed DICOM files in FFmpeg too, and as DICOM jpeg and RLE
-            compression standards are used more than other compression standards. The support for these two should be
-            preferred.
+            <br>
+            In the future, I would like to add support for compressed DICOM files in FFmpeg too, and as DICOM jpeg and
+            RLE compression standards are used more than other compression standards. The support for these two should
+            be preferred.
         </div>
     </section>
 
